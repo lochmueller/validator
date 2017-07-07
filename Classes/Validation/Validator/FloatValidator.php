@@ -1,9 +1,24 @@
 <?php
 
+/**
+ * FloatValidator
+ */
 
 namespace TL\Validator\Validation\Validator;
 
-class FloatValidator
+/**
+ * FloatValidator
+ */
+class FloatValidator extends AbstractValidator
 {
-    // Genauigkeit um verschiedene Evaluatoren zu bauen
+    /**
+     * Check if $value is valid. If it is not valid, needs to add an error
+     * to result.
+     *
+     * @param mixed $value
+     */
+    protected function isValid($value)
+    {
+        // Genauigkeit um verschiedene Evaluatoren zu bauen
+    }
 }

@@ -26,26 +26,13 @@ abstract class AbstractRegexEvaluator
      *
      * @return string
      */
-    function returnFieldJS()
+    public function returnFieldJS()
     {
-        // tbd.
-        return '';
-        return "
-            var theVal = ''+value;
-            var dec='0';
-            if (!value)    return 0;
-            for (var a=theVal.length; a>0; a--)    {
-                if (theVal.substr(a-1,1)=='.' || theVal.substr(a-1,1)==',')    {
-                    dec = theVal.substr(a);
-                    theVal = theVal.substr(0,a-1);
-                    break;
-                }
-            }
-            dec = evalFunc.getNumChars(dec)+'0000';
-            sign = " . ($this->getDecimalPlaces() == 0 ? 'TS.decimalSign' : '""') . ";
-            theVal=evalFunc.parseInt(evalFunc.noSpace(theVal))+sign+dec.substr(0," . $this->getDecimalPlaces() . ");
-            return theVal;
-        ";
+        return "var theVal = ''+value;
+            //var regex = '" . $this->getRegexValidator()->getRegex() . "';
+            //   alert(theVal.match(regex));
+            
+            return theVal;";
     }
 
     /**
@@ -57,12 +44,17 @@ abstract class AbstractRegexEvaluator
      *
      * @return string
      */
-    function evaluateFieldValue($value, $isIn, &$set)
+    public function evaluateFieldValue($value, $isIn, &$set)
     {
-        // tbd.
-        return 1;
-        return $this->forceDouble($value, $this->getDecimalPlaces());
+        return $value;
     }
 
-    // function deevaluateFieldValue
+    /**
+     * @param array $params
+     * @return mixed
+     */
+    public function deevaluateFieldValue(array $params)
+    {
+        return $params['value'];
+    }
 }
