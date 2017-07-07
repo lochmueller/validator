@@ -30,19 +30,11 @@ class BicValidator extends AbstractRegexValidator
      * to result.
      *
      * @param mixed $value
-     * @return bool
      */
     protected function isValid($value)
     {
-        $value = (string)$value;
-        // check "required" via NotEmpty
-        if ($value === '') {
-            return true;
-        }
-
-        if (!preg_match($this->getRegex(), $value)) {
+        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
             $this->addError('Input is no valid BIC number', 2345245982);
         }
-        return !$this->hasErrors();
     }
 }

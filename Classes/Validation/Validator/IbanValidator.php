@@ -30,19 +30,11 @@ class IbanValidator extends AbstractRegexValidator
      * to result.
      *
      * @param mixed $value
-     * @return bool
      */
     protected function isValid($value)
     {
-        $value = (string)$value;
-        // check "required" via NotEmpty
-        if ($value === '') {
-            return true;
-        }
-
-        if (!preg_match($this->getRegex(), $value)) {
+        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
             $this->addError('Input is no valid IBAN number', 123671381);
         }
-        return !$this->hasErrors();
     }
 }

@@ -13,17 +13,17 @@ namespace TL\Validator\Validation\Validator;
  *
  * @author     Ercüment Topal
  */
-class ZipValidator extends AbstractValidator
+class ZipValidator extends AbstractRegexValidator
 {
 
     /**
-     * Enable the Frontend validation
+     * Get the regex for the validation
      *
-     * @return bool|string
+     * @return string
      */
-    public function getFrontendValidator()
+    public function getRegex(): string
     {
-        return true;
+        return '/^([A-Z]{1,2}?[- ]?)?[0-9]{4,5}$/i';
     }
 
     /**
@@ -32,14 +32,11 @@ class ZipValidator extends AbstractValidator
      *                              '5932', 'DE-5932', 'DE 5932'
      *
      * @param mixed $value
-     *
-     * @return bool
      */
     protected function isValid($value)
     {
-        if (trim($value) !== '' && !preg_match('/^([A-Z]{1,2}?[- ]?)?[0-9]{4,5}$/i', trim($value))) {
+        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
             $this->addError('Invalid ZIP structure', 67354745745234);
         }
-        return !$this->hasErrors();
     }
 }

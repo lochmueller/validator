@@ -18,5 +18,4 @@ abstract class AbstractRegexValidator extends AbstractValidator
      * @return string
      */
     abstract public function getRegex(): string;
-
 }

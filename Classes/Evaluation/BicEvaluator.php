@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Iban Evaluator
+ * BicEvaluator
  */
 
 namespace TL\Validator\Evaluation;
 
 use TL\Validator\Validation\Validator\AbstractRegexValidator;
-use TL\Validator\Validation\Validator\IbanValidator;
+use TL\Validator\Validation\Validator\BicValidator;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * IbanEvaluator
+ * BicEvaluator
  */
-class IbanEvaluator extends AbstractRegexEvaluator
+class BicEvaluator extends AbstractRegexEvaluator
 {
 
     /**
@@ -23,6 +23,6 @@ class IbanEvaluator extends AbstractRegexEvaluator
      */
     public function getRegexValidator(): AbstractRegexValidator
     {
-        return GeneralUtility::makeInstance(IbanValidator::class);
+        return GeneralUtility::makeInstance(BicValidator::class);
     }
 }
