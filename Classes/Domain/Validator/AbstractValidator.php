@@ -30,6 +30,7 @@ abstract class AbstractValidator extends \TL\Validator\Validation\Validator\Abst
     protected function addPropertyError($propertyName, $msg, $code)
     {
         $objectManager = new ObjectManager();
+        /** @var Error $validationError */
         $validationError = $objectManager->get(Error::class, $msg, $code);
         $this->result->forProperty($propertyName)
             ->addError($validationError);

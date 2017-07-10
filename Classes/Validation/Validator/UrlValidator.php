@@ -1,8 +1,14 @@
 <?php
 
+/**
+ * UrlValidator
+ */
 
 namespace TL\Validator\Validation\Validator;
 
+/**
+ * UrlValidator
+ */
 class UrlValidator extends AbstractValidator
 {
 
@@ -14,5 +20,8 @@ class UrlValidator extends AbstractValidator
      */
     protected function isValid($value)
     {
+        if (!filter_var($value, FILTER_VALIDATE_URL)) {
+            $this->addError('Input is no valid URK', 742839426);
+        }
     }
 }

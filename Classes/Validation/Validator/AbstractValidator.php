@@ -16,7 +16,8 @@ abstract class AbstractValidator extends \TYPO3\CMS\Extbase\Validation\Validator
 {
 
     /**
-     * Check the deprecated error property and also the nre result structure, if there are any errors in the current context.
+     * Check the deprecated error property and also the nre result structure,
+     * if there are any errors in the current context.
      *
      * @return bool
      */

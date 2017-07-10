@@ -19,6 +19,7 @@ class FloatValidator extends AbstractValidator
      */
     protected function isValid($value)
     {
+        // @todo
         // Genauigkeit um verschiedene Evaluatoren zu bauen
     }
 }
