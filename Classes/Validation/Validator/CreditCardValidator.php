@@ -6,6 +6,8 @@
 
 namespace TL\Validator\Validation\Validator;
 
+use TYPO3\CMS\Core\Utility\MathUtility;
+
 /**
  * CreditCardValidator
  */
@@ -20,12 +22,32 @@ class CreditCardValidator extends AbstractValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        /**
-         * CreditCard Validator:
-         * https://docs.phalconphp.com/en/3.2/api/Phalcon_Validation_Validator_CreditCard
-         * positiv: 5400 4300 1234 5678
-         * negativ: 123456789 oder asdasfgdfhd
-         */
+        if (!is_scalar($value)) {
+            $this->addError('The input value is no scalar value', 12371823);
+            return;
+        }
+
+        $value = str_replace(' ', '', trim($value));
+        if (!MathUtility::canBeInterpretedAsInteger($value) || (int)$value <= 0) {
+            $this->addError('The input value is no positive integer', 234289472);
+            return;
+        }
+
+        if ($this->checksum($value) === false) {
+            $this->addError('The credit card checksum is not valid', 12367823420);
+            return;
+        }
+    }
+
+    /**
+     * @see http://en.wikipedia.org/wiki/Luhn_algorithm
+     */
+    protected function checksum($cardNumber)
+    {
+        $cardNumberChecksum = '';
+        foreach (str_split(strrev((string)$cardNumber)) as $i => $d) {
+            $cardNumberChecksum .= $i % 2 !== 0 ? $d * 2 : $d;
+        }
+        return array_sum(str_split($cardNumberChecksum)) % 10 === 0;
     }
 }

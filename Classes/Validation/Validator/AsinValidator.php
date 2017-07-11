@@ -9,8 +9,18 @@ namespace TL\Validator\Validation\Validator;
 /**
  * AsinValidator
  */
-class AsinValidator extends AbstractValidator
+class AsinValidator extends AbstractRegexValidator
 {
+
+    /**
+     * Get the regex for the validation
+     *
+     * @return string
+     */
+    public function getRegex(): string
+    {
+        return '/^B\d{2}\w{7}|\d{9}(X|\d)$/';
+    }
 
     /**
      * Check if $value is valid. If it is not valid, needs to add an error
@@ -20,12 +30,8 @@ class AsinValidator extends AbstractValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        /*
-         * ASIN Validator:
-        https://productcodevalidator.codeplex.com/SourceControl/latest#ProductCodeValidator/AsinValidator.cs
-        positiv: B0185E3D2O
-        negativ: 4565CXYZ67
-         */
+        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+            $this->addError('Input is no valid ASIN number', 2374835917);
+        }
     }
 }
