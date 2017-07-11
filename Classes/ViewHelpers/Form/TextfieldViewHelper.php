@@ -49,8 +49,12 @@ class TextfieldViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\TextfieldVie
                 if ($notEmpty && sizeof($validators) === 1) {
                     $validtor = $validators[0];
                     if ($validtor instanceof AbstractRegexValidator) {
-                        $this->tag->addAttribute('pattern', $validtor->getRegex());
-                        $this->tag->addAttribute('placeholder', $validtor->getPlaceholder());
+                        if (!$this->tag->hasAttribute('pattern')) {
+                            $this->tag->addAttribute('pattern', $validtor->getRegex());
+                        }
+                        if (!$this->tag->hasAttribute('placeholder')) {
+                            $this->tag->addAttribute('placeholder', $validtor->getPlaceholder());
+                        }
                     }
                 }
             }
