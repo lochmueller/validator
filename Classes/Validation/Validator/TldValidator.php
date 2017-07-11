@@ -24,5 +24,3 @@ class TldValidator extends AbstractValidator
         // https://github.com/Respect/Validation/blob/master/library/Rules/Tld.php
     }
 }
-
-

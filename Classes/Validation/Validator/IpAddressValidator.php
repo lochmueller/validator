@@ -25,6 +25,3 @@ class IpAddressValidator extends AbstractValidator
         // https://de.wikipedia.org/wiki/IPv6 v6?
     }
 }
-
-
-

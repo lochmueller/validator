@@ -22,8 +22,5 @@ class PositiveValidator extends AbstractNumberValidator
     {
         // TODO: Implement isValid() method.
         // https://github.com/Respect/Validation/blob/master/library/Rules/Positive.php
-
     }
 }
-
-

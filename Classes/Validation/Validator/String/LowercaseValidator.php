@@ -24,5 +24,3 @@ class LowercaseValidator extends AbstractStringValidator
         // https://github.com/Respect/Validation/blob/master/library/Rules/Uppercase.php
     }
 }
-
-

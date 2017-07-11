@@ -20,9 +20,16 @@ class LeapYearValidator extends AbstractDateValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        // https://github.com/Respect/Validation/blob/master/library/Rules/LeapYear.php
+        $dateTime = $this->getDateTimeObject($value);
+
+        if (!($dateTime instanceof \DateTimeInterface)) {
+            $this->addError('The given input is no valid date', 46273428);
+            return;
+        }
+
+        $date = strtotime(sprintf('%d-02-29', $dateTime->format('Y')));
+        if ((bool)date('L', $date) === false) {
+            $this->addError('The given input is no valid leap year', 27423412);
+        }
     }
 }
-
-

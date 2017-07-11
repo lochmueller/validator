@@ -13,6 +13,13 @@ class AgeValidator extends AbstractDateValidator
 {
 
     /**
+     * @var array
+     */
+    protected $supportedOptions = [
+        'age' => [18, 'The min age of the validator', 'integer'],
+    ];
+
+    /**
      * Check if $value is valid. If it is not valid, needs to add an error
      * to result.
      *
@@ -20,6 +27,17 @@ class AgeValidator extends AbstractDateValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
+        $value = $this->getDateTimeObject($value);
+        $now = $this->getNow();
+
+        if (!($value instanceof \DateTime)) {
+            $this->addError('No valid date format', 234523452);
+            return;
+        }
+
+        $interval = $now->diff($value);
+        if ($interval->y < $this->options['age']) {
+            $this->addError('The given date is not old enough', 2352352);
+        }
     }
 }

@@ -29,5 +29,3 @@ class AsinValidator extends AbstractValidator
          */
     }
 }
-
-

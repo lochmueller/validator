@@ -29,5 +29,3 @@ class EqualValidator extends AbstractValidator
          */
     }
 }
-
-

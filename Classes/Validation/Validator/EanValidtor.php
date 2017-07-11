@@ -27,4 +27,3 @@ class EanValidtor extends AbstractValidator
          */
     }
 }
-

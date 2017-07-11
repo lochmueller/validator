@@ -6,7 +6,6 @@
 
 namespace TL\Validator\Validation\Validator\Number;
 
-
 /**
  * NegativeValidator
  */
@@ -25,5 +24,3 @@ class NegativeValidator extends AbstractNumberValidator
         // siehe Positive
     }
 }
-
-

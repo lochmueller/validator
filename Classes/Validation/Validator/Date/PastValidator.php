@@ -20,7 +20,16 @@ class PastValidator extends AbstractDateValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
+        $value = $this->getDateTimeObject($value);
+        $now = $this->getNow();
+
+        if (!($value instanceof \DateTime)) {
+            $this->addError('No valid date format', 42783947923);
+            return;
+        }
+
+        if ($value >= $now) {
+            $this->addError('Thw given date is not in the past', 2342378394);
+        }
     }
 }
-

@@ -8,7 +8,6 @@ namespace TL\Validator\Validation\Validator\Number;
 
 use TL\Validator\Validation\Validator\AbstractValidator;
 
-
 /**
  * AbstractNumberValidator
  */

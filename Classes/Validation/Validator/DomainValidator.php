@@ -24,5 +24,3 @@ class DomainValidator extends AbstractValidator
         // https://github.com/Respect/Validation/blob/master/library/Rules/Domain.php
     }
 }
-
-

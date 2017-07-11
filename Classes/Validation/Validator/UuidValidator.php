@@ -24,4 +24,3 @@ class UuidValidator extends AbstractValidator
         // https://github.com/symfony/validator/blob/master/Constraints/UuidValidator.php
     }
 }
-

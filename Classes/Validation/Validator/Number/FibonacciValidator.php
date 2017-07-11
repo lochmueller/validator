@@ -24,6 +24,3 @@ class FibonacciValidator extends AbstractNumberValidator
         // https://github.com/Respect/Validation/blob/master/library/Rules/Fibonacci.php
     }
 }
-
-
-
