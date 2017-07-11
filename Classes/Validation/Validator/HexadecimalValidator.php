@@ -1,15 +1,15 @@
 <?php
 
 /**
- * HexRgbColorValidator
+ * HexadecimalValidator
  */
 
 namespace TL\Validator\Validation\Validator;
 
 /**
- * HexRgbColorValidator
+ * HexadecimalValidator
  */
-class HexRgbColorValidator extends AbstractRegexValidator
+class HexadecimalValidator extends AbstractRegexValidator
 {
 
     /**
@@ -19,7 +19,7 @@ class HexRgbColorValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^#([0-9A-F]{3}|[0-9A-F]{6})$/i';
+        return '/^([0-9A-F]*)$/i';
     }
 
     /**
@@ -31,7 +31,7 @@ class HexRgbColorValidator extends AbstractRegexValidator
     protected function isValid($value)
     {
         if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
-            $this->addError('Input is no valid HEX RGB color', 123871293);
+            $this->addError('Input is no valid hexadecimal', 12323984);
         }
     }
 }
