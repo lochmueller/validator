@@ -50,6 +50,8 @@ abstract class AbstractRegexEvaluator
     }
 
     /**
+     * Deevaluate field value
+     *
      * @param array $params
      * @return mixed
      */

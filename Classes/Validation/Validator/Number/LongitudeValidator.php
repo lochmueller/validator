@@ -1,17 +1,17 @@
 <?php
 
 /**
- * LatitudeValidator
+ * LongitudeValidator
  */
 
-namespace TL\Validator\Validation\Validator;
+namespace TL\Validator\Validation\Validator\Number;
 
 use TYPO3\CMS\Core\Utility\MathUtility;
 
 /**
- * LatitudeValidator
+ * LongitudeValidator
  */
-class LatitudeValidator extends AbstractValidator
+class LongitudeValidator extends AbstractNumberValidator
 {
 
     /**
@@ -26,8 +26,8 @@ class LatitudeValidator extends AbstractValidator
             $this->addError('Longitude have to be a floating number', 136712314);
         }
         $value = (float)$value;
-        if ($value < -90.0 || $value > 90.0) {
-            $this->addError('Latitude is not beween -90.0 and 90.0', 24372839);
+        if ($value < -180.0 || $value > 180.0) {
+            $this->addError('Longitude is not beween -180.0 and 180.0', 328492034);
         }
     }
 }

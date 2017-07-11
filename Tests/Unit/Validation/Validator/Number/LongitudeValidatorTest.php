@@ -4,9 +4,10 @@
  * LongitudeValidatorTest
  */
 
-namespace TL\Validator\Unit\Validation\Validator;
+namespace TL\Validator\Unit\Validation\Validator\Number;
 
-use TL\Validator\Validation\Validator\LongitudeValidator;
+use TL\Validator\Unit\Validation\Validator\AbstractValidatorTest;
+use TL\Validator\Validation\Validator\Number\LongitudeValidator;
 
 /**
  * LongitudeValidatorTest

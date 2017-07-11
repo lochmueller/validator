@@ -4,14 +4,14 @@
  * EvenValidator
  */
 
-namespace TL\Validator\Validation\Validator;
+namespace TL\Validator\Validation\Validator\Number;
 
 use TYPO3\CMS\Core\Utility\MathUtility;
 
 /**
  * EvenValidator
  */
-class EvenValidator extends AbstractValidator
+class EvenValidator extends AbstractNumberValidator
 {
     /**
      * Check if $value is valid. If it is not valid, needs to add an error
@@ -37,6 +37,8 @@ class EvenValidator extends AbstractValidator
     }
 
     /**
+     * Check if the number is even
+     *
      * @param $value
      *
      * @return bool

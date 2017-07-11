@@ -1,17 +1,18 @@
 <?php
 
 /**
- * OddValidatorTest
+ * EvenValidatorTest
  */
 
-namespace TL\Validator\Unit\Validation\Validator;
+namespace TL\Validator\Unit\Validation\Validator\Number;
 
-use TL\Validator\Validation\Validator\OddValidator;
+use TL\Validator\Unit\Validation\Validator\AbstractValidatorTest;
+use TL\Validator\Validation\Validator\Number\EvenValidator;
 
 /**
- * OddValidatorTest
+ * EvenValidatorTest
  */
-class OddValidatorTest extends AbstractValidatorTest
+class EvenValidatorTest extends AbstractValidatorTest
 {
 
 
@@ -21,15 +22,15 @@ class OddValidatorTest extends AbstractValidatorTest
     public function testValidValues()
     {
         $values = [
-            8.748234,
-            '8.748234',
-            16.748234,
-            9,
-            111111,
-            333333
+            8,
+            '10',
+            18,
+            18.00,
+            8,
+            -360.000
         ];
         foreach ($values as $value) {
-            $validator = new OddValidator();
+            $validator = new EvenValidator();
             $validator->validate($value);
             $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
@@ -43,12 +44,12 @@ class OddValidatorTest extends AbstractValidatorTest
         $values = [
             'Text',
             new \stdClass(),
-            -360.000,
-            190,
-            6
+            190.123123,
+            191,
+            '193',
         ];
         foreach ($values as $value) {
-            $validator = new OddValidator();
+            $validator = new EvenValidator();
             $validator->validate($value);
             $this->assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
