@@ -4,7 +4,7 @@
  * AbstractStringValidator
  */
 
-namespace TL\Validator\Validation\String;
+namespace TL\Validator\Validation\Validator\String;
 
 use TL\Validator\Validation\Validator\AbstractValidator;
 

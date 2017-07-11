@@ -4,7 +4,7 @@
  * LowercaseValidator
  */
 
-namespace TL\Validator\Validation\String;
+namespace TL\Validator\Validation\Validator\String;
 
 /**
  * LowercaseValidator
@@ -20,7 +20,12 @@ class LowercaseValidator extends AbstractStringValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        // https://github.com/Respect/Validation/blob/master/library/Rules/Uppercase.php
+        if (!is_scalar($value)) {
+            $this->addError('The input value is no scalar value', 12367813);
+            return;
+        }
+        if ($value !== mb_strtolower($value, mb_detect_encoding($value))) {
+            $this->addError('The input value is not upper case', 249833435);
+        }
     }
 }
