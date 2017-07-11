@@ -40,7 +40,12 @@ class CreditCardValidator extends AbstractValidator
     }
 
     /**
+     * Checksum caluclation
+     *
      * @see http://en.wikipedia.org/wiki/Luhn_algorithm
+     *
+     * @param int $cardNumber
+     * @return bool
      */
     protected function checksum($cardNumber)
     {

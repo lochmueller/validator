@@ -42,6 +42,8 @@ class DomainValidator extends AbstractValidator
     }
 
     /**
+     * Check external
+     *
      * @param array $validatorConfigurations 0 => Validator object, 1 => value
      * @return bool
      */

@@ -13,6 +13,8 @@ class AgeValidator extends AbstractDateValidator
 {
 
     /**
+     * Options
+     *
      * @var array
      */
     protected $supportedOptions = [

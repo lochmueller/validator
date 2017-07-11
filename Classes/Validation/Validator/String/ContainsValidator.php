@@ -13,6 +13,8 @@ class ContainsValidator extends AbstractStringValidator
 {
 
     /**
+     * Options
+     *
      * @var array
      */
     protected $supportedOptions = [

@@ -6,6 +6,8 @@
 
 namespace TL\Validator\Validation\Validator;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /**
  * TldValidator
  */
@@ -20,7 +22,25 @@ class TldValidator extends AbstractValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        // https://github.com/Respect/Validation/blob/master/library/Rules/Tld.php
+        if (!is_string($value)) {
+            $this->addError('The input is no valid string', 12367823423);
+            return;
+        }
+
+        if (!in_array(mb_strtoupper($value), $this->getTopLevelDomains())) {
+            $this->addError('The given value is no valid domain name', 123782934792);
+        }
+    }
+
+    /**
+     * @return array
+     */
+    protected function getTopLevelDomains()
+    {
+        // @todo handle right domain path
+        $topLevelDomainFile = '../../../typo3conf/ext/validator/Resource/Private/TopLevelDomains.txt';
+        $content = GeneralUtility::getUrl($topLevelDomainFile);
+        $topLevelDomains = GeneralUtility::trimExplode("\n", $content, true);
+        return array_slice($topLevelDomains, 2);
     }
 }
