@@ -37,8 +37,7 @@ class TldValidator extends AbstractValidator
      */
     protected function getTopLevelDomains()
     {
-        // @todo handle right domain path
-        $topLevelDomainFile = '../../../typo3conf/ext/validator/Resource/Private/TopLevelDomains.txt';
+        $topLevelDomainFile = dirname(dirname(dirname(dirname(__FILE__)))) . '/Resource/Private/TopLevelDomains.txt';
         $content = GeneralUtility::getUrl($topLevelDomainFile);
         $topLevelDomains = GeneralUtility::trimExplode("\n", $content, true);
         return array_slice($topLevelDomains, 2);
