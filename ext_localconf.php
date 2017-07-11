@@ -8,3 +8,4 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\TL\Validator\Eval
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\TL\Validator\Evaluation\Double4Evaluation::class] = '';
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\TL\Validator\Evaluation\Double5Evaluation::class] = '';
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\TL\Validator\Evaluation\Double6Evaluation::class] = '';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\TL\Validator\Evaluation\IbanEvaluation::class] = '';
