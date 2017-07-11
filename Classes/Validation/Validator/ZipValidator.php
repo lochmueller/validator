@@ -23,7 +23,17 @@ class ZipValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^([A-Z]{1,2}?[- ]?)?[0-9]{4,5}$/i';
+        return '^([A-Za-f]{1,2}?[- ]?)?[0-9]{4,5}$';
+    }
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return '';
     }
 
     /**
@@ -35,7 +45,7 @@ class ZipValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Invalid ZIP structure', 67354745745234);
         }
     }

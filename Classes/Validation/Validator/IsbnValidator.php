@@ -28,6 +28,16 @@ class IsbnValidator extends AbstractRegexValidator
     }
 
     /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return '';
+    }
+
+    /**
      * Check if $value is valid. If it is not valid, needs to add an error
      * to result.
      *
@@ -35,7 +45,7 @@ class IsbnValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Input is no valid ISBN number', 3458938);
         }
     }

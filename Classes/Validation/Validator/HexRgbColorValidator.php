@@ -19,7 +19,17 @@ class HexRgbColorValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^#([0-9A-F]{3}|[0-9A-F]{6})$/i';
+        return '^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$';
+    }
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return '#aaa / #bbbbbb';
     }
 
     /**
@@ -30,7 +40,7 @@ class HexRgbColorValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Input is no valid HEX RGB color', 123871293);
         }
     }

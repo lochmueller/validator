@@ -22,7 +22,17 @@ class BicValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^[a-z]{6}[2-9a-z][0-9a-np-z]([a-z0-9]{3}|x{3})?$/i';
+        return '^[a-zA-Z]{6}[2-9a-zA-Z][0-9a-nA-Np-zP-Z]([a-zA-Z0-9]{3}|[xX]{3})?$';
+    }
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return 'BBBBCCLLbbb';
     }
 
     /**
@@ -33,7 +43,7 @@ class BicValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Input is no valid BIC number', 2345245982);
         }
     }

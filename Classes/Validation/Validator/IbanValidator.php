@@ -22,7 +22,17 @@ class IbanValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}$/';
+        return '^[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}$';
+    }
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return 'XXxx xxxx xxxx xxxx xxxx xx';
     }
 
     /**
@@ -33,7 +43,7 @@ class IbanValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Input is no valid IBAN number', 123671381);
         }
     }

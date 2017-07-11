@@ -19,7 +19,17 @@ class MacAddressValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^(([0-9A-F]{2}-){5}|([0-9A-F]{2}:){5})[0-9A-F]{2}$/i';
+        return '^(([0-9A-Fa-f]{2}-){5}|([0-9A-Fa-f]{2}:){5})[0-9A-Fa-f]{2}$';
+    }
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return 'xx:xx:xx:xx:xx:xx';
     }
 
     /**
@@ -30,7 +40,7 @@ class MacAddressValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Input is no valid MAC address', 123782394);
         }
     }

@@ -19,7 +19,17 @@ class HexadecimalValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^([0-9A-F]*)$/i';
+        return '^([0-9a-fA-F]*)$';
+    }
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return '';
     }
 
     /**
@@ -30,7 +40,7 @@ class HexadecimalValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Input is no valid hexadecimal', 12323984);
         }
     }

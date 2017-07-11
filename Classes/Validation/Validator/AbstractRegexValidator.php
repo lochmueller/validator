@@ -18,4 +18,24 @@ abstract class AbstractRegexValidator extends AbstractValidator
      * @return string
      */
     abstract public function getRegex(): string;
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    abstract public function getPlaceholder(): string;
+
+
+    /**
+     * @param $value
+     * @return bool
+     */
+    protected function isInvalidRegexEvaluation($value)
+    {
+        if (!is_scalar($value) || !preg_match('/' . $this->getRegex() . '/', $value)) {
+            return true;
+        }
+        return false;
+    }
 }

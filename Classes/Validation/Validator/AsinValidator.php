@@ -19,7 +19,17 @@ class AsinValidator extends AbstractRegexValidator
      */
     public function getRegex(): string
     {
-        return '/^B\d{2}\w{7}|\d{9}(X|\d)$/';
+        return '^B\d{2}\w{7}|\d{9}(X|\d)$';
+    }
+
+    /**
+     * Get the placeholder for the validation
+     *
+     * @return string
+     */
+    public function getPlaceholder(): string
+    {
+        return 'Bxxyyyyyyy / xxxxxxxxxX';
     }
 
     /**
@@ -30,7 +40,7 @@ class AsinValidator extends AbstractRegexValidator
      */
     protected function isValid($value)
     {
-        if (!is_scalar($value) || !preg_match($this->getRegex(), $value)) {
+        if ($this->isInvalidRegexEvaluation($value)) {
             $this->addError('Input is no valid ASIN number', 2374835917);
         }
     }
