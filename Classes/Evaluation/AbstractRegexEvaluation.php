@@ -11,7 +11,7 @@ use TL\Validator\Validation\Validator\AbstractRegexValidator;
 /**
  * AbstractRegexEvaluator
  */
-abstract class AbstractRegexEvaluator
+abstract class AbstractRegexEvaluation extends AbstractEvaluation
 {
 
     /**
