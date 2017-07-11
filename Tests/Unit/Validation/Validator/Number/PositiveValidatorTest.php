@@ -1,18 +1,17 @@
 <?php
 
 /**
- * EvenValidatorTest
+ * PositiveValidatorTest
  */
 
 namespace TL\Validator\Unit\Validation\Validator\Number;
 
-use TL\Validator\Unit\Validation\Validator\AbstractValidatorTest;
-use TL\Validator\Validation\Validator\Number\EvenValidator;
+use TL\Validator\Validation\Validator\Number\PositiveValidator;
 
 /**
- * EvenValidatorTest
+ * PositiveValidatorTest
  */
-class EvenValidatorTest extends AbstractNumberValidatorTest
+class PositiveValidatorTest extends AbstractNumberValidatorTest
 {
 
     /**
@@ -21,15 +20,16 @@ class EvenValidatorTest extends AbstractNumberValidatorTest
     public function testValidValues()
     {
         $values = [
-            8,
-            '10',
-            18,
-            18.00,
-            8,
-            -360.000
+            1,
+            '2',
+            5,
+            55,
+            102334155,
+            123123.123123,
         ];
+
         foreach ($values as $value) {
-            $validator = new EvenValidator();
+            $validator = new PositiveValidator();
             $validator->validate($value);
             $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
@@ -43,12 +43,14 @@ class EvenValidatorTest extends AbstractNumberValidatorTest
         $values = [
             'Text',
             new \stdClass(),
-            190.123123,
-            191,
-            '193',
+            -120.12313,
+            -54,
+            -56,
+            -102334154,
+            0
         ];
         foreach ($values as $value) {
-            $validator = new EvenValidator();
+            $validator = new PositiveValidator();
             $validator->validate($value);
             $this->assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }

@@ -20,7 +20,19 @@ class FibonacciValidator extends AbstractNumberValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        // https://github.com/Respect/Validation/blob/master/library/Rules/Fibonacci.php
+        if (!is_numeric($value)) {
+            $this->addError('The input value is not numeric', 12368114);
+            return;
+        }
+        $sequence = [0, 1];
+        $position = 1;
+        while ($value > $sequence[$position]) {
+            ++$position;
+            $sequence[$position] = $sequence[$position - 1] + $sequence[$position - 2];
+        }
+
+        if ($sequence[$position] !== (int)$value) {
+            $this->addError('The input value is not a Fibonacci number', 12361783);
+        }
     }
 }

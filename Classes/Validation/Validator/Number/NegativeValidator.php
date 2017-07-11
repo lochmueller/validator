@@ -20,7 +20,13 @@ class NegativeValidator extends AbstractNumberValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        // siehe Positive
+        if (!is_numeric($value)) {
+            $this->addError('The given input is no valid number', 2137681);
+            return;
+        }
+
+        if ((float)$value >= 0.0) {
+            $this->addError('The given input is no negative number', 123781923);
+        }
     }
 }

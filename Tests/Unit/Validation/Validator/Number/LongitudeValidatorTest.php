@@ -12,7 +12,7 @@ use TL\Validator\Validation\Validator\Number\LongitudeValidator;
 /**
  * LongitudeValidatorTest
  */
-class LongitudeValidatorTest extends AbstractValidatorTest
+class LongitudeValidatorTest extends AbstractNumberValidatorTest
 {
 
 
@@ -25,6 +25,11 @@ class LongitudeValidatorTest extends AbstractValidatorTest
             8.748234,
             '8.748234',
             16.748234,
+            -8.748234,
+            150.748234,
+            -140.748234,
+            '-8.748234',
+            -16.748234,
             9
         ];
         foreach ($values as $value) {

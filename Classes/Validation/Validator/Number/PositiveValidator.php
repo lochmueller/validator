@@ -20,7 +20,13 @@ class PositiveValidator extends AbstractNumberValidator
      */
     protected function isValid($value)
     {
-        // TODO: Implement isValid() method.
-        // https://github.com/Respect/Validation/blob/master/library/Rules/Positive.php
+        if (!is_numeric($value)) {
+            $this->addError('The given input is no valid number', 2137681);
+            return;
+        }
+
+        if ((float)$value <= 0.0) {
+            $this->addError('The given input is no positive number', 123781923);
+        }
     }
 }

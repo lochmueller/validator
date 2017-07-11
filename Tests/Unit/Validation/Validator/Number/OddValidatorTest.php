@@ -12,7 +12,7 @@ use TL\Validator\Validation\Validator\Number\OddValidator;
 /**
  * OddValidatorTest
  */
-class OddValidatorTest extends AbstractValidatorTest
+class OddValidatorTest extends AbstractNumberValidatorTest
 {
 
 

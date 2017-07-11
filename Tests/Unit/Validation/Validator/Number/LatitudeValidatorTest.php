@@ -1,19 +1,19 @@
 <?php
 
 /**
- * EvenValidatorTest
+ * LatitudeValidatorTest
  */
 
 namespace TL\Validator\Unit\Validation\Validator\Number;
 
-use TL\Validator\Unit\Validation\Validator\AbstractValidatorTest;
-use TL\Validator\Validation\Validator\Number\EvenValidator;
+use TL\Validator\Validation\Validator\Number\LatitudeValidator;
 
 /**
- * EvenValidatorTest
+ * LatitudeValidatorTest
  */
-class EvenValidatorTest extends AbstractNumberValidatorTest
+class LatitudeValidatorTest extends AbstractNumberValidatorTest
 {
+
 
     /**
      * @test
@@ -21,15 +21,16 @@ class EvenValidatorTest extends AbstractNumberValidatorTest
     public function testValidValues()
     {
         $values = [
-            8,
-            '10',
-            18,
-            18.00,
-            8,
-            -360.000
+            8.748234,
+            '8.748234',
+            16.748234,
+            89.748234,
+            -16.748234,
+            -89.748234,
+            9
         ];
         foreach ($values as $value) {
-            $validator = new EvenValidator();
+            $validator = new LatitudeValidator();
             $validator->validate($value);
             $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
@@ -43,12 +44,13 @@ class EvenValidatorTest extends AbstractNumberValidatorTest
         $values = [
             'Text',
             new \stdClass(),
-            190.123123,
-            191,
-            '193',
+            -91.000,
+            91.123123,
+            200.123123,
+            -900.000,
         ];
         foreach ($values as $value) {
-            $validator = new EvenValidator();
+            $validator = new LatitudeValidator();
             $validator->validate($value);
             $this->assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
