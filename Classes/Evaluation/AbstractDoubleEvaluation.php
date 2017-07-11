@@ -26,7 +26,7 @@ abstract class AbstractDoubleEvaluation extends AbstractEvaluation
      *
      * @return string
      */
-    function returnFieldJS()
+    public function returnFieldJS()
     {
         return "
             var theVal = ''+value;
@@ -65,7 +65,7 @@ abstract class AbstractDoubleEvaluation extends AbstractEvaluation
      *
      * @return string
      */
-    function evaluateFieldValue($value, $isIn, &$set)
+    public function evaluateFieldValue($value, $isIn, &$set)
     {
         return $this->forceDouble($value, $this->getDecimalPlaces());
     }

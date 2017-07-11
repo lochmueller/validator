@@ -30,7 +30,7 @@ class AbstractSplitStringEvaluation extends AbstractEvaluation
      *
      * @return string
      */
-    function returnFieldJS()
+    public function returnFieldJS()
     {
         return "
             var theVal = ''+value.replace(/ /g,'');
@@ -92,7 +92,7 @@ class AbstractSplitStringEvaluation extends AbstractEvaluation
      *
      * @return string
      */
-    function evaluateFieldValue($value, $isIn, &$set)
+    public function evaluateFieldValue($value, $isIn, &$set)
     {
         return $this->splitString($value, $this->seperator, $this->chars);
     }
