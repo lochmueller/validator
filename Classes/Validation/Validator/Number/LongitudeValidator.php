@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * LongitudeValidator
  */
-
 namespace TL\Validator\Validation\Validator\Number;
 
 use TYPO3\CMS\Core\Utility\MathUtility;

@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * DomainValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator;
 
 use TL\Validator\Validation\Validator\DomainValidator;
@@ -38,7 +36,7 @@ class DomainValidatorTest extends AbstractValidatorTest
     public function testInvalidValues()
     {
         $values = [
-            #'webmaster@fruit-lab.de', @todo !!!!
+            //'webmaster@fruit-lab.de', @todo !!!!
             new \stdClass(),
             -360.000,
             190.123123,

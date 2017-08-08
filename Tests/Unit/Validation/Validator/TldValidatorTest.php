@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * TldValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator;
 
 use TL\Validator\Validation\Validator\TldValidator;

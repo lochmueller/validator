@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * Double4Evaluator
  */
-
 namespace TL\Validator\Evaluation;
 
 /**

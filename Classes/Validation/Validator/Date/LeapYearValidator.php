@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * LeapYearValidator
  */
-
 namespace TL\Validator\Validation\Validator\Date;
 
 /**

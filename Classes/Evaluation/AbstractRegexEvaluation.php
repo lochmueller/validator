@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * AbstractRegexEvaluator
  */
-
 namespace TL\Validator\Evaluation;
 
 use TL\Validator\Validation\Validator\AbstractRegexValidator;

@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * Exception
  */
-
 namespace TL\Validator;
 
 /**
@@ -11,5 +9,4 @@ namespace TL\Validator;
  */
 class Exception extends \Exception
 {
-
 }

@@ -1,11 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * ZIP validator
  *
  * @author     Ercüment Topal
  * @author     Tim Lochmüller
  */
-
 namespace TL\Validator\Validation\Validator;
 
 /**

@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * AsinValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator;
 
 use TL\Validator\Validation\Validator\AsinValidator;

@@ -1,10 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Check a valid IBAN
  *
  * @author     Tim Lochmüller
  */
-
 namespace TL\Validator\Validation\Validator;
 
 /**

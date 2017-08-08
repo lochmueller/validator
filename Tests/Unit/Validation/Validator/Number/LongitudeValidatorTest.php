@@ -1,12 +1,9 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * LongitudeValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator\Number;
 
-use TL\Validator\Unit\Validation\Validator\AbstractValidatorTest;
 use TL\Validator\Validation\Validator\Number\LongitudeValidator;
 
 /**

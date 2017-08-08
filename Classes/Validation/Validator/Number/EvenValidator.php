@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * EvenValidator
  */
-
 namespace TL\Validator\Validation\Validator\Number;
 
 use TYPO3\CMS\Core\Utility\MathUtility;
@@ -46,7 +44,7 @@ class EvenValidator extends AbstractNumberValidator
     protected function isNumberIsEven($value): bool
     {
         $numberParts = explode('.', $value);
-        if (sizeof($numberParts) > 1) {
+        if (count($numberParts) > 1) {
             return false;
         }
         return $numberParts[0] % 2 === 0;
