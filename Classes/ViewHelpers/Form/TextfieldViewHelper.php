@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * TextfieldViewHelper
  */
-
 namespace TL\Validator\ViewHelpers\Form;
 
 use TL\Validator\Validation\Validator\AbstractRegexValidator;
@@ -46,7 +44,7 @@ class TextfieldViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\TextfieldVie
                 }
                 $validators = array_values($validators);
 
-                if ($notEmpty && sizeof($validators) === 1) {
+                if ($notEmpty && count($validators) === 1) {
                     $validtor = $validators[0];
                     if ($validtor instanceof AbstractRegexValidator) {
                         if (!$this->tag->hasAttribute('pattern')) {

@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * AbstractSplitStringEvaluation
  */
-
 namespace TL\Validator\Evaluation;
 
 /**
@@ -64,7 +62,7 @@ class AbstractSplitStringEvaluation extends AbstractEvaluation
      */
     protected function splitString($string, $seperator, $chars)
     {
-        $string = str_replace(" ", '', trim($string));
+        $string = str_replace(' ', '', trim($string));
 
         $output = '';
         while (strlen($string) > $this->chars) {

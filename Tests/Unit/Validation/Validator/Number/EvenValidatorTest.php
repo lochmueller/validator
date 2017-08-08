@@ -1,12 +1,9 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * EvenValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator\Number;
 
-use TL\Validator\Unit\Validation\Validator\AbstractValidatorTest;
 use TL\Validator\Validation\Validator\Number\EvenValidator;
 
 /**

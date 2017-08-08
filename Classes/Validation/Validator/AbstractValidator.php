@@ -1,10 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Abstract  Validator
  *
  * @author     Tim Lochmüller
  */
-
 namespace TL\Validator\Validation\Validator;
 
 /**
@@ -26,6 +25,6 @@ abstract class AbstractValidator extends \TYPO3\CMS\Extbase\Validation\Validator
         if (!is_object($this->result)) {
             return false;
         }
-        return (bool)sizeof($this->result->getErrors());
+        return (bool)count($this->result->getErrors());
     }
 }

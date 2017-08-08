@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * TldValidator
  */
-
 namespace TL\Validator\Validation\Validator;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;

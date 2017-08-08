@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * AbstractValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator\Date;
 
 use TL\Validator\Unit\Validation\Validator\AbstractValidatorTest;

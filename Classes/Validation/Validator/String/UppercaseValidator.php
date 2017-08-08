@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * UppercaseValidator
  */
-
 namespace TL\Validator\Validation\Validator\String;
 
 /**

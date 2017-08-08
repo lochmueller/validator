@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * CreditCardValidator
  */
-
 namespace TL\Validator\Validation\Validator;
 
 use TYPO3\CMS\Core\Utility\MathUtility;

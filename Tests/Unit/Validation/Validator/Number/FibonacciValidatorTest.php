@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * FibonacciValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator\Number;
 
 use TL\Validator\Validation\Validator\Number\FibonacciValidator;

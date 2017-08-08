@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * DomainValidator
  */
-
 namespace TL\Validator\Validation\Validator;
 
 use TL\Validator\Validation\Validator\String\ContainsValidator;
@@ -51,7 +49,7 @@ class DomainValidator extends AbstractValidator
     {
         foreach ($validatorConfigurations as $validatorConfiguration) {
             $result = $validatorConfiguration[0]->validate($validatorConfiguration[1]);
-            if ((bool)sizeof($result->getErrors())) {
+            if ((bool)count($result->getErrors())) {
                 return false;
             }
         }

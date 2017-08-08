@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * FloatValidator
  */
-
 namespace TL\Validator\Validation\Validator;
 
 /**

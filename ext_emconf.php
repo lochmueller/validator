@@ -1,7 +1,6 @@
-<?php
-
+<?php declare(strict_types=1);
 /** @var $_EXTKEY string */
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Validator',
     'description' => 'Validation Framework for TYPO3',
     'version' => '0.1.0',
@@ -9,10 +8,10 @@ $EM_CONF[$_EXTKEY] = array(
     'author' => 'Tim Lochmüller',
     'author_email' => 'webmaster@fruit-lab.de',
     'author_company' => 'hdnet.de',
-    'constraints' => array(
-        'depends' => array(
+    'constraints' => [
+        'depends' => [
             'php' => '7.0.0-0.0.0',
             'typo3' => '7.6.0-8.7.99',
-        ),
-    ),
-);
+        ],
+    ],
+];

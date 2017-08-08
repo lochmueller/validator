@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * Double5Evaluator
  */
-
 namespace TL\Validator\Evaluation;
 
 /**

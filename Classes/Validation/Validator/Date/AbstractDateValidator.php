@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * AbstractDateValidator
  */
-
 namespace TL\Validator\Validation\Validator\Date;
 
 use DateTimeInterface;

@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * AgeValidatorTest
  */
-
 namespace TL\Validator\Unit\Validation\Validator\Date;
 
 use TL\Validator\Validation\Validator\Date\AgeValidator;

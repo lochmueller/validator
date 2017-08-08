@@ -1,9 +1,7 @@
-<?php
-
+<?php declare(strict_types=1);
 /**
  * AbstractDoubleEvaluation
  */
-
 namespace TL\Validator\Evaluation;
 
 use TYPO3\CMS\Core\Utility\MathUtility;
@@ -39,11 +37,11 @@ abstract class AbstractDoubleEvaluation extends AbstractEvaluation
                     break;
                 }
             }
-            dec = dec+'" . str_pad('', $this->getDecimalPlaces(), "0") . "'; 
+            dec = dec+'" . str_pad('', $this->getDecimalPlaces(), '0') . "'; 
             sign = '.';
-            theVal=theVal+sign+dec.substr(0," . $this->getDecimalPlaces() . ");
+            theVal=theVal+sign+dec.substr(0," . $this->getDecimalPlaces() . ');
             return theVal;
-        ";
+        ';
     }
 
     /**
@@ -90,7 +88,7 @@ abstract class AbstractDoubleEvaluation extends AbstractEvaluation
         }
         $valueArray = explode('.', $value);
         $dec = array_pop($valueArray);
-        $value = join('', $valueArray) . '.' . $dec;
+        $value = implode('', $valueArray) . '.' . $dec;
         if ($negative) {
             $value *= -1;
         }

@@ -1,10 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Abstract Domain Validator
  *
  * @author     Tim Lochmüller
  */
-
 namespace TL\Validator\Domain\Validator;
 
 use TL\Validator\Exception;
@@ -25,7 +24,7 @@ abstract class AbstractValidator extends \TL\Validator\Validation\Validator\Abst
      *
      * @param string $propertyName
      * @param string $msg
-     * @param integer $code
+     * @param int $code
      */
     protected function addPropertyError($propertyName, $msg, $code)
     {
