@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * AbstractRegexValidator
  */
@@ -23,7 +25,6 @@ abstract class AbstractRegexValidator extends AbstractValidator
      * @return string
      */
     abstract public function getPlaceholder(): string;
-
 
     /**
      * @param $value

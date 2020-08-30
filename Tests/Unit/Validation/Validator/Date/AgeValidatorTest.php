@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * AgeValidatorTest
  */
@@ -12,7 +14,6 @@ use TL\Validator\Validation\Validator\Date\AgeValidator;
 class AgeValidatorTest extends AbstractDateValidatorTest
 {
 
-
     /**
      * @test
      */
@@ -25,7 +26,7 @@ class AgeValidatorTest extends AbstractDateValidatorTest
         foreach ($values as $value) {
             $validator = $this->buildValidatorMock(AgeValidator::class);
             $validator->validate($value);
-            $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
 
         $values = [
@@ -35,7 +36,7 @@ class AgeValidatorTest extends AbstractDateValidatorTest
         foreach ($values as $value) {
             $validator = $this->buildValidatorMock(AgeValidator::class, ['age' => 3]);
             $validator->validate($value);
-            $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
 
         // 23.04.2017 12:00:00
@@ -59,7 +60,7 @@ class AgeValidatorTest extends AbstractDateValidatorTest
         foreach ($values as $value) {
             $validator = $this->buildValidatorMock(AgeValidator::class);
             $validator->validate($value);
-            $this->assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * EvenValidatorTest
  */
@@ -28,7 +30,7 @@ class EvenValidatorTest extends AbstractNumberValidatorTest
         foreach ($values as $value) {
             $validator = new EvenValidator();
             $validator->validate($value);
-            $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
     }
 
@@ -47,7 +49,7 @@ class EvenValidatorTest extends AbstractNumberValidatorTest
         foreach ($values as $value) {
             $validator = new EvenValidator();
             $validator->validate($value);
-            $this->assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
     }
 }

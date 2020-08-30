@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * TextfieldViewHelper
  */
@@ -57,7 +59,6 @@ class TextfieldViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\TextfieldVie
                 }
             }
         }
-
 
         return $this->tag->render() . 'Huhu';
     }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * LatitudeValidatorTest
  */
@@ -11,7 +13,6 @@ use TL\Validator\Validation\Validator\Number\LatitudeValidator;
  */
 class LatitudeValidatorTest extends AbstractNumberValidatorTest
 {
-
 
     /**
      * @test
@@ -30,7 +31,7 @@ class LatitudeValidatorTest extends AbstractNumberValidatorTest
         foreach ($values as $value) {
             $validator = new LatitudeValidator();
             $validator->validate($value);
-            $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
     }
 
@@ -50,7 +51,7 @@ class LatitudeValidatorTest extends AbstractNumberValidatorTest
         foreach ($values as $value) {
             $validator = new LatitudeValidator();
             $validator->validate($value);
-            $this->assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
     }
 }

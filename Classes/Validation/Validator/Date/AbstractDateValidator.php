@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * AbstractDateValidator
  */
@@ -25,12 +27,15 @@ abstract class AbstractDateValidator extends AbstractValidator
         try {
             if (!is_scalar($value)) {
                 return null;
-            } elseif (is_numeric($value) || MathUtility::canBeInterpretedAsInteger($value)) {
+            }
+            if (is_numeric($value) || MathUtility::canBeInterpretedAsInteger($value)) {
                 $value = (int)$value;
                 return new \DateTime($value . '-01-01 12:00');
-            } elseif (is_string($value)) {
+            }
+            if (is_string($value)) {
                 return new \DateTime('@' . strtotime($value));
-            } elseif ($value instanceof DateTimeInterface) {
+            }
+            if ($value instanceof DateTimeInterface) {
                 return $value;
             }
             return new \DateTime($value);

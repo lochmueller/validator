@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * CreditCardValidatorTest
  */
@@ -11,7 +13,6 @@ use TL\Validator\Validation\Validator\CreditCardValidator;
  */
 class CreditCardValidatorTest extends AbstractValidatorTest
 {
-
 
     /**
      * @test
@@ -26,7 +27,7 @@ class CreditCardValidatorTest extends AbstractValidatorTest
         foreach ($values as $value) {
             $validator = new CreditCardValidator();
             $validator->validate($value);
-            $this->assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertFalse($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
     }
 
@@ -53,7 +54,7 @@ class CreditCardValidatorTest extends AbstractValidatorTest
         foreach ($values as $value) {
             $validator = new CreditCardValidator();
             $validator->validate($value);
-            $this->assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
+            self::assertTrue($validator->hasErrors(), 'Check value: ' . var_export($value, true));
         }
     }
 }

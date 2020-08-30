@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * TldValidator
  */
@@ -35,7 +37,7 @@ class TldValidator extends AbstractValidator
      */
     protected function getTopLevelDomains()
     {
-        $topLevelDomainFile = dirname(dirname(dirname(dirname(__FILE__)))) . '/Resource/Private/TopLevelDomains.txt';
+        $topLevelDomainFile = dirname(dirname(dirname(__DIR__))) . '/Resources/Private/TopLevelDomains.txt';
         $content = GeneralUtility::getUrl($topLevelDomainFile);
         $topLevelDomains = GeneralUtility::trimExplode("\n", $content, true);
         return array_slice($topLevelDomains, 2);

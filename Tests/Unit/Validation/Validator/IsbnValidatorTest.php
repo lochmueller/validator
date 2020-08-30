@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * IsbnValidatorTest
  */
@@ -11,7 +13,6 @@ use TL\Validator\Validation\Validator\LongitudeValidator;
  */
 class IsbnValidatorTest extends AbstractValidatorTest
 {
-
 
     /**
      * @test
