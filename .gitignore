@@ -1,4 +1,2 @@
-.idea/
-.Build/*
-composer.lock
+/.Build/
 /.idea/

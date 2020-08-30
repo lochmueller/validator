@@ -1,60 +1,68 @@
 {
-  "name": "lochmueller/validator",
-  "version": "0.1.0",
-  "type": "typo3-cms-extension",
-  "description": "Validation Framework for TYPO3",
-  "autoload": {
-    "psr-4": {
-      "TL\\Validator\\": "Classes/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "TL\\Validator\\Tests\\": "Tests"
-    }
-  },
-  "keywords": [
-    "TYPO3 CMS",
-    "Validator",
-    "Extbase"
-  ],
-  "authors": [
-    {
-      "name": "Tim Lochmüller",
-      "email": "webmaster@fruit-lab.de",
-      "role": "Developer",
-      "homepage": "https://github.com/lochmueller"
-    }
-  ],
-  "require": {
-    "php": ">=7.0.0",
-    "typo3/cms-core": "~7.6.0||~8.7.0||dev-master"
-  },
-  "replace": {
-    "validator": "self.version",
-    "typo3-ter/validator": "self.version"
-  },
-  "homepage": "https://github.com/lochmueller/validator",
-  "license": "GPL-2.0+",
-  "support": {
-    "issues": "https://github.com/lochmueller/validator/issues"
-  },
-  "require-dev": {
-    "namelesscoder/typo3-repository-client": "2.0.0",
-    "typo3/testing-framework": "~1.1.0",
-    "squizlabs/php_codesniffer": "~3.0.1"
-  },
-  "config": {
-    "vendor-dir": ".Build/vendor",
-    "bin-dir": ".Build/bin"
-  },
-  "extra": {
-    "typo3/cms": {
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".Build/Web",
-      "Package": {
-        "partOfMinimalUsableSystem": true
-      }
-    }
-  }
+	"name": "lochmueller/validator",
+	"type": "typo3-cms-extension",
+	"description": "Validation Framework for TYPO3",
+	"autoload": {
+		"psr-4": {
+			"TL\\Validator\\": "Classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"TL\\Validator\\Tests\\": "Tests"
+		}
+	},
+	"keywords": [
+		"TYPO3 CMS",
+		"Validator",
+		"Extbase"
+	],
+	"authors": [
+		{
+			"name": "Tim Lochmüller",
+			"email": "webmaster@fruit-lab.de",
+			"role": "Developer",
+			"homepage": "https://github.com/lochmueller"
+		}
+	],
+	"require": {
+		"php": "^7.1||^7.2||^7.3||^7.4",
+		"typo3/cms-core": "^8.7||^9.5"
+	},
+	"replace": {
+		"typo3-ter/validator": "self.version"
+	},
+	"homepage": "https://github.com/lochmueller/validator",
+	"license": "GPL-2.0-or-later",
+	"support": {
+		"issues": "https://github.com/lochmueller/validator/issues"
+	},
+	"require-dev": {
+		"typo3/testing-framework": "^4.15",
+		"friendsofphp/php-cs-fixer": "^2.16"
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".Build/Web",
+			"Package": {
+				"partOfMinimalUsableSystem": true
+			}
+		}
+	},
+	"scripts": {
+		"code": [
+			"@code:php-cs-fixer"
+		],
+		"code:php-cs-fixer": [
+			"php-cs-fixer fix --config Resources/Private/Build/PhpCsFixer.php --cache-file=.Build/phpcs.cache"
+		],
+		"test": [
+			"phpunit -c Tests/UnitTests.xml"
+		]
+	}
 }
