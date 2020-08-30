@@ -1,5 +1,6 @@
 /.gitattributes export-ignore
 /.Build/ export-ignore
 /.idea/ export-ignore
+/composer.lock export-ignore
 /Tests/ export-ignore
 /README.md export-ignore
