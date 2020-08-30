@@ -3,7 +3,7 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Validator',
     'description' => 'Validation Framework for TYPO3',
-    'version' => '0.1.0',
+    'version' => '1.0.0',
     'state' => 'stable',
     'author' => 'Tim Lochmüller',
     'author_email' => 'webmaster@fruit-lab.de',
