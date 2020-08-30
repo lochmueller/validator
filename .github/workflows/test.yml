@@ -1,0 +1,13 @@
+name: Test
+on: [push,pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: pxgamer/composer-action@master
+        with:
+          command: install --optimize-autoloader --prefer-dist
+      - uses: pxgamer/composer-action@master
+        with:
+          command: test
