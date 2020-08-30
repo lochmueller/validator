@@ -27,7 +27,7 @@ class CreditCardValidator extends AbstractValidator
             return;
         }
 
-        $value = str_replace(' ', '', trim($value));
+        $value = str_replace(' ', '', trim((string)$value));
         if (!MathUtility::canBeInterpretedAsInteger($value) || (int)$value <= 0) {
             $this->addError('The input value is no positive integer', 234289472);
             return;

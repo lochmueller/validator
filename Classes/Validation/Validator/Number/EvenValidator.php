@@ -45,7 +45,7 @@ class EvenValidator extends AbstractNumberValidator
      */
     protected function isNumberIsEven($value): bool
     {
-        $numberParts = explode('.', $value);
+        $numberParts = explode('.', (string)$value);
         if (count($numberParts) > 1) {
             return false;
         }

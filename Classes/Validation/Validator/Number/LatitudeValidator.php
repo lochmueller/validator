@@ -22,6 +22,10 @@ class LatitudeValidator extends AbstractNumberValidator
      */
     protected function isValid($value)
     {
+        if (!is_scalar($value)) {
+            $this->addError('The input value is no scalar value', 123671);
+            return;
+        }
         if (!MathUtility::canBeInterpretedAsFloat($value) && !MathUtility::canBeInterpretedAsInteger($value)) {
             $this->addError('Longitude have to be a floating number', 136712314);
         }

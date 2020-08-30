@@ -32,7 +32,7 @@ abstract class AbstractRegexValidator extends AbstractValidator
      */
     protected function isInvalidRegexEvaluation($value)
     {
-        if (!is_scalar($value) || !preg_match('/' . $this->getRegex() . '/', $value)) {
+        if (!is_scalar($value) || !preg_match('/' . $this->getRegex() . '/', (string)$value)) {
             return true;
         }
         return false;
